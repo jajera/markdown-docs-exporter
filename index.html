@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Documents Exporter</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <h1><i class="fas fa-file-export"></i> Markdown Documents Exporter</h1>
+        </div>
+        <div class="header-right">
+            <a href="https://github.com/yourusername/markdown-docs-exporter" target="_blank" class="github-link"
+                title="View on GitHub">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+            </a>
+            <button id="theme-toggle" class="theme-toggle" title="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <div class="editor-panel">
+            <div class="panel-header">
+                <h3><i class="fas fa-edit"></i> Markdown Editor</h3>
+                <div class="editor-buttons">
+                    <button id="import-btn" class="btn btn-secondary" title="Import markdown file (Ctrl+O)">
+                        <i class="fas fa-file-import"></i> Import
+                    </button>
+                    <button id="toc-btn" class="btn btn-secondary" title="Generate Table of Contents (Ctrl+T)">
+                        <i class="fas fa-list-ul"></i> TOC
+                    </button>
+                    <button id="stats-btn" class="btn btn-secondary" title="Document Statistics (Ctrl+I)">
+                        <i class="fas fa-chart-bar"></i> Stats
+                    </button>
+                    <button id="clear-btn" class="btn btn-secondary" title="Clear content">
+                        <i class="fas fa-trash"></i> Clear
+                    </button>
+                    <button id="copy-btn" class="btn btn-secondary" title="Copy markdown">
+                        <i class="fas fa-copy"></i> Copy
+                    </button>
+                </div>
+            </div>
+            <textarea id="markdown-input" placeholder="# Document Title
+
+## Introduction
+Write your document content here using Markdown syntax...
+
+## Features
+- **Bold text** and *italic text*
+- [Links](https://example.com)
+- `inline code` and code blocks
+- Lists and numbered lists
+- Tables and more!
+
+## Code Example
+
+```javascript
+function hello() {
+    console.log('Hello, World!');
+}
+```
+
+## Table Example
+
+| Feature | Description | Status |
+|---------|-------------|--------|
+| Export PDF | Generate PDF documents | ✅ |
+| Export DOCX | Generate Word documents | ✅ |
+| Live Preview | Real-time rendering | ✅ |
+
+## Conclusion
+
+This is a powerful tool for creating and exporting markdown documents.
+
+> **Tip**: Use the export buttons above to download your document in PDF or DOCX format.
+
+### Additional Notes
+- Auto-saves your work locally
+- Supports light and dark themes
+- Fully responsive design
+- Works offline once loaded
+
+### Keyboard Shortcuts
+- **Ctrl/Cmd + S**: Save locally
+- **Ctrl/Cmd + O**: Import file
+- **Ctrl/Cmd + E**: Export to PDF
+- **Ctrl/Cmd + T**: Generate Table of Contents
+- **Ctrl/Cmd + I**: Document Statistics
+- **Ctrl/Cmd + /**: Toggle theme"></textarea>
+            <div class="editor-footer">
+                <div id="word-count" class="word-count">0 words, 0 chars (0 no spaces)</div>
+            </div>
+        </div>
+
+        <div class="preview-panel">
+            <div class="panel-header">
+                <h3><i class="fas fa-eye"></i> Live Preview</h3>
+                <div class="export-buttons">
+                    <button id="download-pdf" class="btn btn-primary" title="Download as PDF (Ctrl+E)">
+                        <i class="fas fa-file-pdf"></i> PDF
+                    </button>
+                    <button id="download-docx" class="btn btn-primary" title="Download as DOCX">
+                        <i class="fas fa-file-word"></i> DOCX
+                    </button>
+                </div>
+            </div>
+            <div id="preview-content" class="preview-content"></div>
+        </div>
+    </main>
+
+    <!-- Hidden file input for importing -->
+    <input type="file" id="file-input" accept=".md" style="display: none;">
+
+    <!-- Libraries -->
+    <script src="libs/showdown.min.js"></script>
+    <script src="libs/html2pdf.bundle.min.js"></script>
+    <script src="libs/html-docx.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
