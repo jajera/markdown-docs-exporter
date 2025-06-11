@@ -20,7 +20,7 @@ A beautiful, fully client-side markdown document editor that allows you to write
 1. **Clone or Download**:
 
    ```bash
-   git clone https://github.com/yourusername/markdown-docs-exporter.git
+   git clone https://github.com/jajera/markdown-docs-exporter.git
    cd markdown-docs-exporter
    ```
 
